@@ -19,6 +19,10 @@
             box-sizing: border-box;
         }
         
+        #additional-content {
+    display: none; /* Скрыто по умолчанию */
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -128,6 +132,14 @@
         }
         
         .section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .additional-content-section {
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -332,6 +344,42 @@
                 padding-bottom: 5px;
             }
         }
+
+
+        /* Добавляем в ваш стиль */
+.tab-content {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+.tab-content.active {
+    opacity: 1;
+    height: auto;
+}
+
+/* Для плавного сворачивания секций */
+.content-list {
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.content-list.collapsed {
+    opacity: 0;
+    max-height: 0 !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.content-list.expanded {
+    opacity: 1;
+    max-height: 1000px; /* Достаточно большое значение */
+}
+
+
+
     </style>
 </head>
 <body>
@@ -340,7 +388,7 @@
             <div class="header-content">
                 <div class="logo">CG Academy</div>
                 <div class="user-menu">
-                    <div class="avatar">И</div>
+                    
                 </div>
             </div>
         </div>
@@ -356,61 +404,8 @@
             <div class="tab active">Курс</div>
             <div class="tab">Дополнительно</div>
         </div>
-        
-        <div class="section">
-            <div class="section-header">
-                <h2 class="section-title">Общее</h2>
-                <div class="section-toggle">Свернуть</div>
-            </div>
-            
-            <ul class="content-list">
-                <li class="content-item">
-                    <div class="item-icon lecture">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M12 8V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="item-content">
-                        <div class="item-title">Сведения о курсе</div>
-                        <div class="item-meta">Основная информация и требования</div>
-                    </div>
-                </li>
-                
-                <li class="content-item">
-                    <div class="item-icon lecture">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M12 8V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="item-content">
-                        <div class="item-title">Форма обучения</div>
-                        <div class="item-meta">Очная / Дистанционная</div>
-                    </div>
-                    
-                </li>
-                
-                <li class="content-item">
-                    <div class="item-icon lecture">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M12 8V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="item-content">
-                        <div class="item-title">Обязательная программа</div>
-                        <div class="item-meta">Требования к аттестации</div>
-                    </div>
-                    
-                </li>
-            </ul>
-        </div>
-        
-        <div class="section">
+
+        <div class="section" style="opacity: 0; transition: opacity 0.3s ease;">
             <div class="section-header">
                 <h2 class="section-title">Введение в компьютерную графику. Представление графической информации в компьютере</h2>
                 <div class="section-toggle">Свернуть</div>
@@ -472,11 +467,10 @@
                 </li>
             </ul>
             
-           
         </div>
 
 
-        <div class="section">
+        <div class="section" style="opacity: 0; transition: opacity 0.3s ease;">
             <div class="section-header">
                 <h2 class="section-title">Курс 1</h2>
                 <div class="section-toggle">Свернуть</div>
@@ -537,12 +531,13 @@
                     
                 </li>
             </ul>
-            
-           
         </div>
 
+        
 
-        <div class="section">
+
+
+        <div class="section" style="opacity: 0; transition: opacity 0.3s ease;">
             <div class="section-header">
                 <h2 class="section-title">Курс 2</h2>
                 <div class="section-toggle">Свернуть</div>
@@ -602,12 +597,65 @@
                     </div>
                     
                 </li>
-            </ul>
-            
-           
+            </ul>  
         </div>
 
-    
+    <div id="additional-content" class="tab-content" style="display: none;">   
+        <div class="additional-content-section">
+            <div class="section-header">
+                <h2 class="section-title">Общее</h2>
+                <div class="section-toggle">Свернуть</div>
+            </div>
+
+
+            <ul class="content-list">
+                <li class="content-item">
+                    <div class="item-icon lecture">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 8V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-title">Сведения о курсе</div>
+                        <div class="item-meta">Основная информация и требования</div>
+                    </div>
+                </li>
+                
+                <li class="content-item">
+                    <div class="item-icon lecture">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 8V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-title">Форма обучения</div>
+                        <div class="item-meta">Очная / Дистанционная</div>
+                    </div>
+                    
+                </li>
+                
+                <li class="content-item">
+                    <div class="item-icon lecture">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 8V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="item-content">
+                        <div class="item-title">Обязательная программа</div>
+                        <div class="item-meta">Требования к аттестации</div>
+                    </div>
+                    
+                </li>
+            </ul>
+        </div>
+    </div>  
+   
     <footer>
         <div class="container">
             <p>CG Academy © 2023. Все права защищены. А У</p>
@@ -616,32 +664,94 @@
     </footer>
     
     <script>
-        // Простая логика для переключения вкладок
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                document.querySelector('.tab.active').classList.remove('active');
-                tab.classList.add('active');
-            });
-        });
         
-        // Логика для сворачивания/разворачивания секций
-        document.querySelectorAll('.section-toggle').forEach(toggle => {
-            toggle.addEventListener('click', () => {
-                const section = toggle.closest('.section');
-                const content = section.querySelector('.content-list');
-                const progress = section.querySelector('.progress-container');
+      // Логика для переключения вкладок с анимацией
+document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        // Удаляем активный класс у всех вкладок
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        // Добавляем активный класс текущей вкладке
+        this.classList.add('active');
+        
+        // Анимация перехода
+        if (this.textContent.trim() === 'Курс') {
+            // Скрываем дополнительный контент с анимацией
+            const additionalContent = document.getElementById('additional-content');
+            additionalContent.classList.remove('active');
+            
+            // Показываем основные секции после завершения анимации
+            setTimeout(() => {
+                document.querySelectorAll('.section').forEach(section => {
+                    section.style.display = 'block';
+                });
+                additionalContent.style.display = 'none';
                 
-                if (content.style.display === 'none') {
-                    content.style.display = 'block';
-                    if (progress) progress.style.display = 'block';
-                    toggle.textContent = 'Свернуть';
-                } else {
-                    content.style.display = 'none';
-                    if (progress) progress.style.display = 'none';
-                    toggle.textContent = 'Развернуть';
-                }
+                // Запускаем анимацию появления
+                setTimeout(() => {
+                    document.querySelectorAll('.section').forEach((section, index) => {
+                        setTimeout(() => {
+                            section.style.opacity = '1';
+                        }, index * 100);
+                    });
+                }, 10);
+            }, 300);
+            
+        } else if (this.textContent.trim() === 'Дополнительно') {
+            // Скрываем основные секции с анимацией
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.opacity = '0';
             });
-        });
+            
+            // Показываем дополнительный контент после завершения анимации
+            setTimeout(() => {
+                document.querySelectorAll('.section').forEach(section => {
+                    section.style.display = 'none';
+                });
+                const additionalContent = document.getElementById('additional-content');
+                additionalContent.style.display = 'block';
+                
+                // Запускаем анимацию появления
+                setTimeout(() => {
+                    additionalContent.classList.add('active');
+                }, 10);
+            }, 300);
+        }
+    });
+});
+
+// Улучшенная логика для сворачивания/разворачивания секций с анимацией
+document.querySelectorAll('.section-toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+        const section = toggle.closest('.section, .additional-content-section');
+        const content = section.querySelector('.content-list');
+        
+        if (content.classList.contains('collapsed')) {
+            // Разворачиваем
+            content.classList.remove('collapsed');
+            content.classList.add('expanded');
+            toggle.textContent = 'Свернуть';
+        } else {
+            // Сворачиваем
+            content.classList.remove('expanded');
+            content.classList.add('collapsed');
+            toggle.textContent = 'Развернуть';
+        }
+    });
+});
+
+// Инициализация при загрузке
+document.addEventListener('DOMContentLoaded', function() {
+    // Все секции начинают развернутыми
+    document.querySelectorAll('.content-list').forEach(content => {
+        content.classList.add('expanded');
+    });
+    
+    // Основной контент виден, дополнительный скрыт
+    document.querySelectorAll('.section').forEach(section => {
+        section.style.opacity = '1';
+    });
+    document.getElementById('additional-content').style.display = 'none';
+});
     </script>
 </body>
 </html>
