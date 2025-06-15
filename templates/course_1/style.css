@@ -1,0 +1,131 @@
+/* Общие стили */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7ff;
+}
+
+/* Шапка (Header) - растянута на всю ширину */
+header {
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 0;
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+    color: #2c3e50;
+}
+
+/* Основной заголовок лекции с иконкой */
+.lecture-main-title {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.lecture-main-title h1 {
+    font-size: 28px;
+    margin: 0;
+    color: #2c3e50;
+    flex: 1;
+}
+
+.title-icon {
+    font-size: 36px;
+    color: #3498db;
+    background: #e8f4fc;
+    padding: 15px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Основной контейнер (широкий) */
+.main-container {
+    max-width: 1200px;
+    margin: 20px auto 30px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Блок с текстом (серый фон) */
+.content-block {
+    background-color: #fafafa;
+    padding: 30px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+}
+
+/* Мета-информация о лекции */
+.lecture-meta {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+/* Основное содержимое лекции */
+.lecture-content h2 {
+    font-size: 22px;
+    margin: 30px 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.lecture-content h3 {
+    font-size: 18px;
+    margin: 25px 0 15px 0;
+    text-align: center;
+    color: #3498db;
+}
+
+.lecture-content p {
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.lecture-content ul {
+    max-width: 800px;
+    padding-left: 20px;
+}
+
+.lecture-content li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
+}
+
+/* Разделитель */
+.divider {
+    border-top: 1px solid #eee;
+    margin: 30px 0;
+}
