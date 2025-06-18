@@ -7,6 +7,10 @@ body {
   color: #6c757d;
 }
 
+.footer_text {
+  color: #9b9b9b26;
+}
+
 a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
@@ -1321,17 +1325,17 @@ textarea.form-control {
   font-family: "Rubik", arial, sans-serif;
 }
 
-.site-footer p {
+/* .site-footer p {
   color: #000;
-}
+} */
 
 .site-footer p:last-child {
   margin-bottom: 0;
 }
 
-.site-footer a {
+/* .site-footer a {
   color: #000;
-}
+} */
 
 .site-footer a:hover {
   opacity: .4;
